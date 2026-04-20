@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformaciy_mamy | Medjitova</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #013220; color: white; text-align: center; margin: 0; }
+        .header { background: linear-gradient(145deg, #f4d03f, #c0a16b); color: black; padding: 40px 20px; border-radius: 0 0 30px 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .container { padding: 20px; max-width: 500px; margin: auto; }
+        .btn { display: block; background: #f4d03f; color: black; padding: 15px; margin: 15px auto; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .btn:hover { background: white; transform: scale(1.03); }
+        .menu-card { background: rgba(255,255,255,0.1); border: 1px solid #f4d03f; padding: 20px; border-radius: 20px; margin-top: 20px; text-align: left; }
+        .lang-switch { padding: 15px; background: rgba(0,0,0,0.2); }
+        .lang-btn { background: none; border: 1px solid #f4d03f; color: #f4d03f; padding: 8px 15px; cursor: pointer; border-radius: 10px; margin: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="lang-switch">
+        <button class="lang-btn" onclick="setLang('uz')">O'ZB</button>
+        <button class="lang-btn" onclick="setLang('ru')">РУС</button>
+        <button class="lang-btn" onclick="setLang('en')">ENG</button>
+    </div>
+
+    <div class="header">
+        <h1 id="title">Transformaciy_mamy</h1>
+        <p id="subtitle" style="font-size: 1.2em; font-weight: bold;">Medjitova: 117 kg → 77 kg</p>
+    </div>
+
+    <div class="container">
+        <p id="desc" style="font-style: italic; font-size: 1.1em;">Онгли озиш ва интервал очиш</p>
+
+        <a href="https://www.instagram.com/transformaciya_mamy/" target="_blank" class="btn" id="insta-btn">INSTAGRAM-НИ КЎРИШ</a>
+        <a href="https://t.me/transformaciya_mamy" target="_blank" class="btn" id="mara-btn">МАРАФОНГА ЁЗИЛИШ</a>
+
+        <div class="menu-card">
+            <h3 id="day-title">1-кун Менюси (Бепул)</h3>
+            <p><strong>12:00 - 13:00</strong></p>
+            <p id="dish1">Сули ёрмаси (овсянка) сутли бўтқаси + асал</p>
+            <hr style="border: 0.5px solid #f4d03f;">
+            <p><strong>16:30 - 17:10</strong></p>
+            <p id="dish2">Қизил ловиядан лобио + 50г нон</p>
+        </div>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            const t = {
+                uz: { title: "Transformaciy_mamy", sub: "Medjitova: 117 kg дан 77 kg гача", desc: "Онгли озиш ва интервал очиш", insta: "INSTAGRAM-НИ КЎРИШ", mara: "МАРАФОНГА ЁЗИЛИШ", dTitle: "1-кун Менюси (Бепул)", d1: "Сули ёрмаси (овсянка) сутли бўтқаси + асал", d2: "Қизил ловиядан лобио + 50г нон" },
+                ru: { title: "Transformaciy_mamy", sub: "Medjitova: От 117 кг до 77 кг", desc: "Осознанное похудение", insta: "СМОТРЕТЬ INSTAGRAM", mara: "ЗАПИСАТЬСЯ НА МАРАФОН", dTitle: "Меню 1-го дня (Бесплатно)", d1: "Овсяная каша на молоке с медом", d2: "Лобио из красной фасоли + 50г хлеба" },
+                en: { title: "Transformaciy_mamy", sub: "Medjitova: From 117 kg to 77 kg", desc: "Mindful Weight Loss", insta: "VISIT INSTAGRAM", mara: "JOIN MARATHON", dTitle: "Day 1 Menu (Free)", d1: "Creamy Oatmeal with Honey", d2: "Red bean Lobio + 50g bread" }
+            };
+            document.getElementById('title').innerText = t[lang].title;
+            document.getElementById('subtitle').innerText = t[lang].sub;
+            document.getElementById('desc').innerText = t[lang].desc;
+            document.getElementById('insta-btn').innerText = t[lang].insta;
+            document.getElementById('mara-btn').innerText = t[lang].mara;
+            document.getElementById('day-title').innerText = t[lang].dTitle;
+            document.getElementById('dish1').innerText = t[lang].d1;
+            document.getElementById('dish2').innerText = t[lang].d2;
+        }
+    </script>
+</body>
+</html>
